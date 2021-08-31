@@ -1,0 +1,364 @@
+<html style="scroll-snap-type: y mandatory; overflow-x:hidden;">
+<!-- <html> -->
+    <head>
+        <title>ElifElse Coding - interactive online coding classes</title>
+        <link rel="shortcut icon" type="image/jpg" href="./img/logo.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0;">
+        <meta charset="UTF-8">
+
+        <style>
+
+            @keyframes downArrow { 
+                0% { transform: translateY(0); opacity: 0.4 } 
+                100% { transform: translateY(3em); opacity: 0.9 } 
+            } 
+
+            @keyframes fadeIn {
+                0% { opacity: 0 }
+                100% {opacity: 1}
+            }
+
+            @keyframes slideIn {
+                0% { transform:translateX(125%) }
+                100% { transform: translateX(0%); }
+            }
+
+
+            .arrow { 
+                position: relative;
+                border-color:transparent; 
+                border-style:solid; 
+                border-width:0 2em; 
+                display:block; 
+                height:0; 
+                margin:5px auto; 
+                opacity:0.4; 
+                text-indent:-9999px; 
+                transform-origin: 50% 50%; 
+                width:0; 
+            } 
+
+            .down { 
+                animation-name: downArrow;
+                animation-duration: 1s;
+                animation-iteration-count: infinite; 
+                border-top:2em solid #00b6f1; 
+            }
+            
+            .slideInAnimation {
+                animation: slideIn 1s 0.5s ease 1 normal forwards;
+            }
+            .fadeInAnimation {
+                animation-name: fadeIn;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+
+            }
+
+
+            #titleBg {
+                position:absolute;
+                top:0px; left: 0px;
+                height:90vh;
+                width:100%;
+                background-color:rgba(1, 1, 179, 0.829);
+                scroll-snap-align: start;
+            }
+            #titleText {
+                color:white;
+                text-align: center;
+                position:relative;
+                top:30%;
+                font-size: 55px;
+                opacity:0;
+                animation: fadeIn 2s;
+                animation-delay: 1s;
+                animation-fill-mode: forwards; 
+            }
+
+            #subtitleText {
+                color:white;
+                text-align: center;
+                position:relative;
+                top:30%;
+                font-size: 20px;
+                opacity:0;
+                animation: fadeIn 2s;
+                animation-delay: 1.5s;
+                animation-fill-mode: forwards; 
+            }
+
+            .space {
+                width:100vw;
+                float:left;
+                margin-left:-8;
+
+                
+            } 
+
+            #space1 {
+                background:
+                linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+                linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+                linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+                linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+                linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+                linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+                background-color: #131313;
+                background-size: 20px 20px;
+            }
+
+            #space2 {
+                background:
+                radial-gradient(black 15%, transparent 16%) 0 0,
+                radial-gradient(black 15%, transparent 16%) 8px 8px,
+                radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+                radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+                background-color:#282828;
+                background-size:16px 16px;
+            }
+
+            #space3 {
+                background-image: url("./img/background.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+
+            .contentDisplay {
+                position:relative;
+                top:10vh;
+                display: flex;
+                flex-wrap: wrap;
+                scroll-snap-align: start;
+                min-height: 100vh;
+            }
+
+            .logoImg {
+                width:500px;
+                margin-top:8vw;
+                margin-left:200px;
+                align-self: left;
+            }
+
+            .logoContainer {
+                transform:translateX(125%)
+            }
+
+            #signupBtn {
+
+                color: darkblue;
+                padding: 20px 30px;
+                text-decoration: none;
+
+                background:cyan;
+                border:solid;
+                border-color:darkblue;
+                border-radius: 100px;
+
+                margin-top:50px;
+                white-space: nowrap;
+            }
+            #signupBtn:hover {
+                filter: brightness(110%);
+            }
+
+            .link {
+                color:white;
+            }
+
+            .projectList {
+                color:white;
+                font-size: x-large;
+            }
+
+            li {
+                margin:5px;
+            }
+
+            .content {
+                width:40%;
+                margin-top:10vw;
+                margin-left:100px;
+                animation-duration: 2s;
+                opacity: 0;
+            }
+
+            #htmlLogo {margin-left:200px;font-size:250px;color:cyan;}
+
+            .projectsArea {
+                width:40%;
+                margin-top:100px;
+                margin-left:100px;
+                color:orange;
+                animation-duration: 1s;
+                opacity: 0;
+            }
+
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) {
+                .content {width:90%;margin-left:10px;}
+                .logoImg {margin-left:0px;margin-top:0;width:70%;}
+                #titleText {top:10%;font-size: 45px;}
+                #subtitleText {top:10%}
+                #htmlLogo {font-size: 100px;margin-left:50px;}
+                .logoContainer {transform:translate(95%)}
+                .projectsArea {margin-left:10px; margin-top:20px; width:90%;}
+                .projectList {font-size: medium;}
+                #laptopImg {width:40%;margin-left: 10px;}
+            }
+
+
+
+        </style>
+
+    </head>
+
+    <body style="color:white;">
+        <div id="titleBg">
+            <h1 id="titleText">Online interactive coding classes</h1>
+            <p id="subtitleText">- Knowing coding is crucial in the modern world.</p>
+        </div>
+        <div  style="height:90vh;margin:-5px;"></div>
+        <div class="space" id="space1">
+            <div class="down arrow"></div>
+            
+            <div class="contentDisplay">
+                <div class="content fadeIn">
+                    <h1>Why coding?</h1>
+                    <p>Learning how to code is a crucial skill in the modern world, most high paying jobs require the use of coding. Learning how to code also improves your problem solving and critical thinking by challenging you to think outside the box! Finalay <strong>it's fun!</strong> Every class you learn something new and reinforce the newly learned material with a fun and interactive project. We teach <strong>Python</strong>, a fast growing intuitive programming language that is used by companies like Facebook and Google.</p>
+                </div>
+                <div class="logoContainer">
+                    <img src="./img/pythonLogo.png" class="logoImg"></div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+        <div class="space" id="space2">
+            <div class="down arrow"></div>
+
+            <div class="contentDisplay">
+                <div class="content fadeIn">
+                    <h1>About us...</h1><p>Alex and Ray are eight grade students who have been coding for several years. Ray is very good with robotics and problem solving and recently received scholarship for the MTRC Summer Robotics program at Storybook University. Alex knows about many different python modules, web development, and is the creator of this website!</p>
+                </div>
+                <div class="logoContainer" >
+                   <p id="htmlLogo">&lt/&gt</p> 
+                </div>
+            </div>
+        </div>
+
+        <div class="space" id="space1">
+            <div class="down arrow"></div>
+            
+            <div class="contentDisplay">
+                <div class="projectsArea fadeIn">
+                    <h1>Alex's projects</h1>
+                    <ul class="projectList">
+                        <li><a href="#" class="link">This website!</a></li>
+                        <li><a target="_blank" href="https://github.com/Sanyok6/ALtext" class="link">Text editor for programming</a></li>
+                        <li>Machine learning image recognition</li>
+                        <li><a target="_blank" href="https://sanyok6.github.io/music" class="link">Music notes practice site</a></li>
+                        <li><a target="_blank" href="https://sanyok6.pythonanywhere.com/screenshare" class="link">Screen sharing website</a></li>
+                    </ul>
+                    <img src="./img/screenShareProject.png" style="width:90%;margin:10px;">
+                </div>
+                <div class="projectsArea fadeIn"  style="animation-delay: 0.5s;">
+                    <h1>Ray's projects</h1>
+                    <ul class="projectList">
+                        <li><a target="_blank" href="https://m.youtube.com/watch?v=1bbk-KD0oik" class="link">"Iwaiter" robot</a></li>
+                        <li>Space aliens game</li>
+                        <li>Yahtzee text based game</li>
+                        <li>Goat Latin translator</li>
+                    </ul>
+                    <video style="width:90%;margin:10px;" controls muted><source src="./img/video.mp4" type="video/mp4"></video>
+                    <br><br><br>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="space" id="space3">
+            <div class="down arrow"></div>
+
+            <div class="contentDisplay" style="height:95vh;">
+                <div class="content fadeIn">
+                    <h1>Sign up!</h1>
+                    <p>The classes are done in groups of up to five people, invite your friends to join too! Classes are done on Google Meet, for a price of <strong>5$ per a one hour class.</strong> Classes start in October (sign up for more info). <strong>The first class is free!</strong></p>
+                    <br>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkpr_ZoJiT7kdmjxTZOCD5GobHrGZuFKCHz5H7JfYgdtXn7w/viewform?usp=sf_link" id="signupBtn">Sign up now!</a>
+                </div>
+                <div class="logoContainer">
+                    <img src="./img/laptopCoding.jpg" class="logoImg" id="laptopImg"></div>
+                </div>
+            </div>
+            
+            <p style="color: black;text-align: center;font-size: x-large;">contact us at <strong>elifelsecoding@gmail.com</strong><img src="./img/logo.png" style="height:70px;width:70px;margin-left:10px;"></p>
+            
+        </div>
+
+    </body>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script> -->
+
+    <script src="./vanta/three.min.js"></script>
+    <script src="./vanta/vanta.net.min.js"></script>
+    <script>
+    VANTA.NET({
+        el: "#titleBg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x1eff,
+        backgroundColor: 0x131316,
+        points: 12.00,
+        maxDistance: 20.00,
+        spacing: 16.00
+    })
+    </script>
+
+
+    <script>
+
+        const observer1 = new IntersectionObserver(entries => {
+        // Loop over the entries
+        entries.forEach(entry => {
+                // If the element is visible
+            if (entry.isIntersecting) {
+                // Add the animation class
+                entry.target.classList.add('slideInAnimation');
+                console.log(entry.target)
+            }
+        });
+        });
+
+        for (var x = 0; x < document.querySelectorAll('.logoContainer').length; x++) {
+            observer1.observe(document.querySelectorAll(".logoContainer")[x]);
+        }
+
+        const observer2 = new IntersectionObserver(entries => {
+        // Loop over the entries
+        entries.forEach(entry => {
+                // If the element is visible
+            if (entry.isIntersecting) {
+                // Add the animation class
+                entry.target.classList.add('fadeInAnimation');
+                console.log(entry.target)
+            }
+        });
+        });
+
+        for (var x = 0; x < document.querySelectorAll('.fadeIn').length; x++) {
+            observer2.observe(document.querySelectorAll(".fadeIn")[x]);
+        }
+
+    </script>
+
+</html>
