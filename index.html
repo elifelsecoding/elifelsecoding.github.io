@@ -1,8 +1,8 @@
 <html style="scroll-snap-type: y mandatory; overflow-x:hidden;">
 <!-- <html> -->
     <head>
-        <title>ElifElse Coding Website!</title>
-        <link rel="shortcut icon" type="image/jpg" href="logo.png"/>
+        <title>ElifElse Coding - interactive online coding classes</title>
+        <link rel="shortcut icon" type="image/jpg" href="./img/logo.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0;">
         <meta charset="UTF-8">
 
@@ -62,7 +62,6 @@
                 height:90vh;
                 width:100%;
                 background-color:rgba(1, 1, 179, 0.829);
-                background-image: url("./net_image.png");
                 scroll-snap-align: start;
             }
             #titleText {
@@ -120,7 +119,7 @@
             }
 
             #space3 {
-                background-image: url("./background.jpeg");
+                background-image: url("./img/background.jpeg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -231,7 +230,7 @@
                     <p>Learning how to code is a crucial skill in the modern world, most high paying jobs require the use of coding. Learning how to code also improves your problem solving and critical thinking by challenging you to think outside the box! Finalay <strong>it's fun!</strong> Every class you learn something new and reinforce the newly learned material with a fun and interactive project. We teach <strong>Python</strong>, a fast growing intuitive programming language that is used by companies like Facebook and Google.</p>
                 </div>
                 <div class="logoContainer">
-                    <img src="./pythonLogo.png" class="logoImg"></div>
+                    <img src="./img/pythonLogo.png" class="logoImg"></div>
                 </div>
             </div>
 
@@ -264,7 +263,7 @@
                         <li><a target="_blank" href="https://sanyok6.github.io/music" class="link">Music notes practice site</a></li>
                         <li><a target="_blank" href="https://sanyok6.pythonanywhere.com/screenshare" class="link">Screen sharing website</a></li>
                     </ul>
-                    <img src="screenShareProject.png" style="width:90%;margin:10px;">
+                    <img src="./img/screenShareProject.png" style="width:90%;margin:10px;">
                 </div>
                 <div class="projectsArea fadeIn"  style="animation-delay: 0.5s;">
                     <h1>Ray's projects</h1>
@@ -274,7 +273,7 @@
                         <li>Yahtzee text based game</li>
                         <li>Goat Latin translator</li>
                     </ul>
-                    <video style="width:90%;margin:10px;" controls muted><source src="./video.mp4" type="video/mp4"></video>
+                    <video style="width:90%;margin:10px;" controls muted><source src="./img/video.mp4" type="video/mp4"></video>
                     <br><br><br>
                 </div>
             </div>
@@ -292,18 +291,21 @@
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkpr_ZoJiT7kdmjxTZOCD5GobHrGZuFKCHz5H7JfYgdtXn7w/viewform?usp=sf_link" id="signupBtn">Sign up now!</a>
                 </div>
                 <div class="logoContainer">
-                    <img src="./laptopCoding.jpg" class="logoImg" id="laptopImg"></div>
+                    <img src="./img/laptopCoding.jpg" class="logoImg" id="laptopImg"></div>
                 </div>
             </div>
             
-            <p style="color: black;text-align: center;font-size: x-large;">contact us at <strong>elifelsecoding@gmail.com</strong><img src="logo.png" style="height:70px;width:70px;margin-left:10px;"></p>
+            <p style="color: black;text-align: center;font-size: x-large;">contact us at <strong>elifelsecoding@gmail.com</strong><img src="./img/logo.png" style="height:70px;width:70px;margin-left:10px;"></p>
             
         </div>
 
     </body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script> -->
+
+    <script src="./vanta/three.min.js"></script>
+    <script src="./vanta/vanta.net.min.js"></script>
     <script>
     VANTA.NET({
         el: "#titleBg",
