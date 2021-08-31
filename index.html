@@ -1,7 +1,7 @@
 <html style="scroll-snap-type: y mandatory; overflow-x:hidden;">
 <!-- <html> -->
     <head>
-        <title>ElifElse Coding - interactive online coding classes</title>
+        <title>Elif-Else Coding - interactive online coding classes</title>
         <link rel="shortcut icon" type="image/jpg" href="./img/logo.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0;">
         <meta charset="UTF-8">
@@ -209,7 +209,43 @@
                 #laptopImg {width:40%;margin-left: 10px;}
             }
 
+            .collapsible {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 14px;
+                width: 60%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
 
+            .active, .collapsible:hover {
+                background-color: #ccc;
+            }
+
+            .collapsible:after {
+                content: '\02795';
+                font-size: 13px;
+                color: rgb(255, 255, 255);
+                float: right;
+                margin-left: 5px;
+            }
+
+            .active:after {
+                content: "\2796";
+            }
+
+            .qna {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: #282828;
+                color:orange;
+                max-height: 300px;
+                overflow:auto;
+            }
 
         </style>
 
@@ -243,6 +279,21 @@
             <div class="contentDisplay">
                 <div class="content fadeIn">
                     <h1>About us...</h1><p>Alex and Ray are eight grade students who have been coding for several years. Ray is very good with robotics and problem solving and recently received scholarship for the MTRC Summer Robotics program at Storybook University. Alex knows about many different python modules, web development, and is the creator of this website!</p>
+                    <button class="collapsible">Have a question? Read the Q&A!</button>
+                    <div class="qna">
+                      <p><b>Q:</b> Is coding hard to learn?</p>
+                      <p><b>A:</b> Nope! It is not hard when broken down into pieces, and demonstrated with projects.</p>
+                      <br>
+                      <p><b>Q:</b> How long does it take to learn coding?</p>
+                      <p><b>A:</b> Learning a programming language like Python takes time and effort. We will do our best to make that time not only productive but also fun!</p>
+                      <br>
+                      <p><b>Q:</b> What is a good age to start learning coding?</p>
+                      <p><b>A:</b> Any age is good to learn coding, but we recommend the student is between 8-14 years old.</p>
+                      <br>
+                      <p><b>Q:</b> How will the classes be grouped?</p>
+                      <p><b>A:</b> We will group classes by age, skill, and of course requests to be with your friends!</p>
+                      <br>
+                    </div> 
                 </div>
                 <div class="logoContainer" >
                    <p id="htmlLogo">&lt/&gt</p> 
@@ -358,6 +409,21 @@
         for (var x = 0; x < document.querySelectorAll('.fadeIn').length; x++) {
             observer2.observe(document.querySelectorAll(".fadeIn")[x]);
         }
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+            }
+        });
+        } 
 
     </script>
 
